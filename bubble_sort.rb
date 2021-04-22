@@ -24,8 +24,8 @@ def bubble_sort!(array)
     1.upto(array.size - 1) do |index|
       if block_given? 
         result = yield(array[index])
-        binding.pry
-        next if array[index-1] <= result
+        result2 = yield(array[index-1])
+        next if result2 <= result
       end
       # if !block_given?
       #   next if array[index - 1] <= array[index]
